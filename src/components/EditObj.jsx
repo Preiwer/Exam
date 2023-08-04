@@ -67,13 +67,14 @@ const EditObj = ({
       )
       .then((response) => {
         console.log(response.data);
+        fetchCurrentData();
         setOpen(false);
       })
       .catch((error) => {
         console.error(error);
       });
 
-    fetchCurrentData();
+    
   };
 
   return (

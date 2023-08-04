@@ -44,11 +44,13 @@ const Del = ({
     const deleteObj = async () => {
       const dlUrl = await axios
         .delete(`https://test.uzprogers.uz/api/notes/${currentID}?format=json`)
-        .then((res) => console.log(res))
+        .then((res) => {
+          console.log(res);
+          fetchCurrentData();
+        })
         .catch((err) => console.log(err));
     };
     deleteObj();
-    fetchCurrentData();
   };
   return (
     <>
